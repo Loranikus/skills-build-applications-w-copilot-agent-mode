@@ -1,11 +1,9 @@
 import cors from 'cors';
 import 'dotenv/config';
 import express from 'express';
-import mongoose from 'mongoose';
 import { apiRouter } from './routes';
-import { baseUrl, mongoUri, port } from './config';
-
-mongoose.set('bufferCommands', false);
+import { baseUrl, port } from './config';
+import { connectToDatabase } from './config/database';
 
 const app = express();
 
@@ -28,10 +26,7 @@ async function start(): Promise<void> {
   });
 
   try {
-    await mongoose.connect(mongoUri, {
-      dbName: 'octofit_db',
-      serverSelectionTimeoutMS: 2000,
-    });
+    await connectToDatabase();
     console.log('MongoDB connected to octofit_db');
   } catch (error) {
     console.warn('MongoDB connection unavailable:', error);

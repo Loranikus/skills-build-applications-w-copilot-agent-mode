@@ -1,6 +1,5 @@
 import 'dotenv/config';
-import mongoose from 'mongoose';
-import { mongoUri } from '../config';
+import { connectToDatabase, disconnectFromDatabase } from '../config/database';
 import {
   ActivityModel,
   LeaderboardEntryModel,
@@ -12,10 +11,7 @@ import {
 async function seed(): Promise<void> {
   console.log('Seed the octofit_db database with test data');
 
-  await mongoose.connect(mongoUri, {
-    dbName: 'octofit_db',
-    serverSelectionTimeoutMS: 5000,
-  });
+  await connectToDatabase(5000);
 
   await Promise.all([
     UserModel.deleteMany({}),
@@ -175,5 +171,5 @@ seed()
     process.exitCode = 1;
   })
   .finally(async () => {
-    await mongoose.disconnect();
+    await disconnectFromDatabase();
   });
