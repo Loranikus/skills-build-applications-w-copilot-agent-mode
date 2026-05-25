@@ -1,0 +1,151 @@
+.app-shell {
+  min-height: 100vh;
+  background: #f7f9fb;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: flex-end;
+  padding: 28px 32px 18px;
+  border-bottom: 1px solid #d9e2ea;
+  background: #ffffff;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  color: #527086;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.app-header h1 {
+  margin: 0;
+  color: #172331;
+  font-size: 30px;
+  line-height: 1.15;
+}
+
+.app-nav {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.app-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 7px 12px;
+  border: 1px solid #c8d5df;
+  border-radius: 6px;
+  color: #23384a;
+  font-weight: 600;
+  text-decoration: none;
+  background: #ffffff;
+}
+
+.app-nav a.active,
+.app-nav a:hover {
+  color: #ffffff;
+  background: #235b75;
+  border-color: #235b75;
+}
+
+.app-main {
+  padding: 28px 32px 40px;
+}
+
+.resource-view {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.resource-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.resource-header h1 {
+  margin: 0 0 8px;
+  color: #172331;
+  font-size: 26px;
+}
+
+.resource-header p {
+  margin: 0;
+  color: #5f7180;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.resource-count {
+  display: inline-flex;
+  min-width: 44px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: #d8f0e5;
+  color: #174f37;
+  font-weight: 800;
+}
+
+.status-text {
+  padding: 18px;
+  border: 1px solid #c8d5df;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #415666;
+}
+
+.error-text {
+  border-color: #efb4aa;
+  color: #8d2f22;
+  background: #fff2f0;
+}
+
+.table-responsive {
+  border: 1px solid #d9e2ea;
+  border-radius: 6px;
+  background: #ffffff;
+}
+
+.table {
+  margin-bottom: 0;
+}
+
+.table th {
+  color: #3d5365;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.table td {
+  color: #203140;
+}
+
+@media (max-width: 760px) {
+  .app-header,
+  .resource-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .app-main,
+  .app-header {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .app-nav {
+    justify-content: flex-start;
+  }
+}
